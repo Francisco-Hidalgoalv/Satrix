@@ -19,16 +19,26 @@
   }
   
   .nav a {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
     margin: 0 10px;
-    color: white;
+    border: 2px solid transparent;
     text-decoration: none;
+    color: white;
     font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 6px;
+    transition: all 0.3s ease;
   }
   
   .nav a:hover {
-    text-decoration: underline;
+    transform: scale(1.08);
+    color: #ffdfb0;
+    border-color: white;
   }
-  
+    
   .contenido {
     text-align: center;
     padding: 30px;

@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f5f6fa;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .reglas {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
+  }
+  
