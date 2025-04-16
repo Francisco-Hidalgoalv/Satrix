@@ -1,0 +1,86 @@
+.header {
+    background-color: #f79c1d;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .contenido {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .contenido h2 {
+    color: #f79c1d;
+    margin-bottom: 20px;
+  }
+  
+  .reglas {
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .reglas ul {
+    text-align: left;
+    list-style: disc;
+    margin-bottom: 20px;
+  }
+  
+  .reglas ul li {
+    margin: 10px 0;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn-primario {
+    background-color: #f79c1d;
+    color: white;
+  }
+  
+  .btn-secundario {
+    background-color: white;
+    color: #f79c1d;
+    border: 2px solid #f79c1d;
+  }
+  
