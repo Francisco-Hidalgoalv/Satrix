@@ -1,12 +1,35 @@
 .header {
-    background-color: #f79c1d;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  background: linear-gradient(
+    270deg,
+    #f9c500,
+    #ffd700,
+    #fff1a3,
+    #ffd700,
+    #f9c500
+  );
+  background-size: 400% 100%;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+  animation: metalHeaderShine 6s infinite ease-in-out;
+  border-bottom: 2px solid #fff1a3;
+}
+
+@keyframes metalHeaderShine {
+  0% {
+    background-position: 0% 0%;
   }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
   
   .header .logo {
     display: flex;
@@ -49,48 +72,141 @@
     margin-bottom: 20px;
   }
   
-  .reglas {
+  .reglas-container {
+    display: flex;
+    justify-content: space-between; /* o center, o start */
+    gap: 20px; /* espacio entre columnas */
+    flex-wrap: wrap; /* por si no cabe en pantallas chicas */
+    margin-bottom: 30px;
+  }
+
+  .reglas1 {
     background-color: white;
     max-width: 800px;
+    height: 170px;
     margin: auto;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
   }
   
-  .reglas ul {
+  .reglas1 ul {
     text-align: left;
     list-style: disc;
     margin-bottom: 20px;
+    text-align: center;
   }
   
-  .reglas ul li {
-    margin: 10px 0;
+  .reglas1 ul li {
+    margin: 20px 0;
   }
   
-  .botones {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .btn-primario {
-    background-color: #f79c1d;
-    color: white;
-  }
-  
-  .btn-secundario {
+  .reglas2 {
     background-color: white;
+    max-width: 800px;
+    height: 170px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .reglas2 ul {
+    text-align: left;
+    list-style: disc;
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+  
+  .reglas2 ul li {
+    margin: 20px 0;
+  }
+
+  .reglas1 ul,
+  .reglas2 ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .reglas1 ul li::before,
+  .reglas2 ul li::before {
+    content: "– ";
+    color: #000000;
+    font-weight: bold;
+  }
+  
+
+  .titulo-factura {
     color: #f79c1d;
-    border: 2px solid #f79c1d;
+    margin-bottom: 1px;
+  }
+
+  .factura-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px auto;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .boleto {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+  }
+  
+  .boleto:hover {
+    background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+    transform: scale(1.1);
+  }
+
+  .envios {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .envios:hover {
+    background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+    transform: scale(1.1);
+  }
+
+  .alimentos {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .alimentos:hover {
+    background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+    transform: scale(1.1);
+  }
+  
+  .material-symbols-outlined {
+    font-size: 40px;
+    color: #f79c1d;
+  }
+  
+  .icon-button label {
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
   }
   

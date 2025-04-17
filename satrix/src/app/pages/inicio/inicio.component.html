@@ -13,18 +13,46 @@
   
   <main class="contenido">
     <h2>¿NECESITAS FACTURA?</h2>
-    <div class="reglas">
-      <ul>
-        <li>La factura se puede generar durante todo el mes de compra, hasta <strong>72 hrs. posterior al cierre de mes de compra</strong>.</li>
-        <li>Si tu compra se realiza el último día del mes, solo tendrás hasta el día 3 del mes siguiente para solicitar tu factura.</li>
-        <li>Los boletos abiertos solo se facturan en el mismo mes de la compra aplicando las mismas consideraciones anteriores.</li>
-        <li>Todas las facturas solicitadas son emitidas con la fecha en que se generan en el portal y/o sistema.</li>
-        <li>Si tus boletos pertenecen a meses distintos, se emitirán dos facturas agrupando los boletos por mes de compra.</li>
-      </ul>
-      <div class="botones">
-        <button class="btn btn-primario">FACTURACIÓN</button>
-        <button class="btn btn-secundario">RECUPERAR CFDI</button>
+    <div class="reglas-container">
+      <div class="reglas1">
+        <ul>
+          <li>La factura puede generarse hasta 72 h después de finalizar el mes de compra.</li>
+          <li>Si compras el último día del mes, tienes hasta el 3 del siguiente para facturar.</li>
+          <li>Solo se facturan boletos abiertos en el mes de compra.</li>
+         </ul>
+      </div>
+        <div class="reglas2">
+          <ul>
+            <li>La factura se emite con la fecha de generación en el portal.</li>
+            <li>Boletos de distintos meses generan facturas separadas por mes.</li>
+          </ul>
       </div>
     </div>
+
+    <h1 class="titulo-factura">Facturación</h1>
+    <div class="factura-container">
+
+      <div class="icon-button">
+        <button id="boleto" class="boleto">
+          <span class="material-symbols-outlined">confirmation_number</span>
+        </button>
+        <label for="boleto">BOLETOS</label>
+      </div>
+    
+      <div class="icon-button">
+        <button id="envios" class="envios">
+          <span class="material-symbols-outlined">local_shipping</span>
+        </button>
+        <label for="envios">ENVÍOS PRIMERA PLUS</label>
+      </div>
+    
+      <div class="icon-button">
+        <button id="alimentos" class="alimentos">
+          <span class="material-symbols-outlined">restaurant</span>
+        </button>
+        <label for="alimentos">CONSUMO DE ALIMENTOS</label>
+      </div>
+    </div>
+
   </main>
   
