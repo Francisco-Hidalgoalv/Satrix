@@ -1,5 +1,5 @@
 body {
-    background-color: #fff9db;
+    background-color: #ffffff;
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
   }
@@ -10,3 +10,336 @@ body {
     border-radius: 12px;
   }
   
+  .header {
+    background: linear-gradient(
+      270deg,
+      #f9c500,
+      #ffd700,
+      #fff1a3,
+      #ffd700,
+      #f9c500
+    );
+    background-size: 400% 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+    animation: metalHeaderShine 6s infinite ease-in-out;
+    border-bottom: 2px solid #fff1a3;
+  }
+  
+  @keyframes metalHeaderShine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+    
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .header img {
+      height: 40px;
+    }
+    
+    .nav a {
+      display: inline-block;
+      transform: scale(1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+      margin: 0 10px;
+      border: 2px solid transparent;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav a:hover {
+      transform: scale(1.08);
+      color: #ffdfb0;
+      border-color: white;
+    }
+      
+    .contenido {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .contenido h2 {
+      color: #f79c1d;
+      margin-bottom: 20px;
+      margin-top: 1px;
+    }
+    
+    .reglas-container {
+      display: flex;
+      justify-content: space-between; /* o center, o start */
+      gap: 20px; /* espacio entre columnas */
+      flex-wrap: wrap; /* por si no cabe en pantallas chicas */
+      margin-bottom: 30px;
+    }
+  
+    .reglas1 {
+      background-color:#fff5cc;
+      max-width: 800px;
+      height: 120px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .reglas1:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+    }
+    
+    .reglas1 ul {
+      text-align: left;
+      list-style: disc;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-top: 1px;
+    }
+    
+    .reglas1 ul li {
+      margin: 20px 0;
+      margin-top: 5px;
+    }
+    
+    .reglas2 {
+      background-color:#fff5cc;
+      max-width: 800px;
+      height: 120px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .reglas2:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+    }
+    
+    .reglas2 ul {
+      text-align: left;
+      list-style: disc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .reglas2 ul li {
+      margin: 20px 0;
+      
+    }
+  
+    .reglas1 ul,
+    .reglas2 ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .reglas1 ul li::before,
+    .reglas2 ul li::before {
+      content: "– ";
+      color: #000000;
+      font-weight: bold;
+    }
+    
+  
+    .titulo-factura {
+      color: #f79c1d;
+      margin-bottom: -20px;
+    }
+  
+    .factura-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 100%;
+    }
+    
+    .boleto {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;  
+    }
+    
+    .boleto:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .envios {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .envios:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .alimentos {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .alimentos:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+    
+    .material-symbols-outlined {
+      font-size: 40px;
+      color: #f79c1d;
+    }
+    
+    .icon-button label {
+      margin-top: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+    }
+    
+  .titulo-CFDI {
+      color: #f79c1d;
+      margin-bottom: -20px;
+    }
+  
+    .CFDI-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 100%;
+    }
+  
+    .TTUR {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;  
+    }
+    
+    .TTUR:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .primera_plus {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .primera_plus:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .flecha_amarilla {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .flecha_amarilla:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .boletos_bus {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .boletos_bus:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .consumo_alimentos {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .consumo_alimentos:hover {
+      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      transform: scale(1.1);
+    }
+  
+    .icon-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px; /* 👈 SEPARA cada botón del siguiente */
+      text-align: center;
+      max-width: 120px; /* opcional: para que no crezca demasiado el texto */
+    }
+  
+    .CFDI-container,
+  .factura-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* 👈 para que hagan salto de línea si no caben */
+    justify-content: center;
+    gap: 20px; /* alternativa moderna al margin */
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+    
