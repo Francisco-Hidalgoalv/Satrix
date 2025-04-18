@@ -1,0 +1,45 @@
+.contacto-padre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* 👈 Para que no se vayan a otra línea */
+    overflow-x: auto;   /* 👈 Scroll horizontal si no caben */
+    padding: 10px;
+  }
+  
+  .contacto-container {
+    flex: 0 0 auto;
+    width: 280px;
+    background-color: #fff5cc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contacto-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+  }
+
+  .persona {
+    margin-bottom: 25px;
+  }
+  
+  .nombre {
+    font-weight: bold;
+    color: #f79c1d;
+  }
+  
+  .correo {
+    font-style: italic;
+    color: #555;
+    font-size: 14px;
+  }
+
+  .departamento {
+    font-size: 17px;
+    color: #f79c1d;
+  }
+  
