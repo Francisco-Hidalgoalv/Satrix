@@ -1,1 +1,16 @@
-<p>facturacion-envios works!</p>
+<main class="contenido">
+    <h2>Facturación de envíos primera plus</h2>
+  
+    <form class="formulario-factura" (ngSubmit)="enviarFormulario()" #formulario="ngForm">
+      <label for="rfc">RFC:</label>
+      <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required />
+      <p class="error" *ngIf="rfcInvalid">El RFC debe tener entre 12 y 13 caracteres.</p>
+  
+      <label for="token">Token de la guía:</label>
+      <input id="token" name="token" type="text" [(ngModel)]="token" required />
+      <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
+  
+      <button type="submit" class="btn btn-primario">Continuar</button>
+    </form>
+  </main>
+  
