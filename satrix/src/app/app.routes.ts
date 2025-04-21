@@ -31,4 +31,39 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/facturacion-boletos/facturacion-boletos.component').then(m => m.FacturacionBoletosComponent)
   },
+  {
+    path: 'facturacion-envios',
+    loadComponent: () =>
+      import('./pages/facturacion-envios/facturacion-envios.component').then(m => m.FacturacionEnviosComponent)
+  },
+  {
+    path: 'facturacion-alimentos',
+    loadComponent: () =>
+      import('./pages/facturacion-alimentos/facturacion-alimentos.component').then(m => m.FacturacionAlimentosComponent)
+  },
+  {
+    path: 'recuperacion-ttur',
+    loadComponent: () =>
+      import('./pages/recuperacion-ttur/recuperacion-ttur.component').then(m => m.RecuperacionTTURComponent)
+  },
+  {
+    path: 'recuperacion-envios',
+    loadComponent: () =>
+      import('./pages/recuperacion-envios/recuperacion-envios.component').then(m => m.RecuperacionEnviosComponent)
+  },
+  {
+    path: 'recuperacion-flecha',
+    loadComponent: () =>
+      import('./pages/recuperacion-flecha/recuperacion-flecha.component').then(m => m.RecuperacionFlechaComponent)
+  },
+  {
+    path: 'recuperacion-boletos',
+    loadComponent: () =>
+      import('./pages/recuperacion-boletos/recuperacion-boletos.component').then(m => m.RecuperacionBoletosComponent)
+  },
+  {
+    path: 'recuperacion-alimentos',
+    loadComponent: () =>
+      import('./pages/recuperacion-alimentos/recuperacion-alimentos.component').then(m => m.RecuperacionAlimentosComponent)
+  },
 ];

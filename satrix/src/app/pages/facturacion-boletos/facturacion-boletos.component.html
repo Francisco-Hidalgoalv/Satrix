@@ -1,1 +1,14 @@
-<p>facturacion-boletos works!</p>
+<main class="contenido">
+    <h2>Facturación de Boletos</h2>
+  
+    <form class="formulario-factura" (ngSubmit)="enviarFormulario()">
+      <label for="rfc">RFC:</label>
+      <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required />
+  
+      <label for="token">Token / No. de Boleto:</label>
+      <input id="token" name="token" type="text" [(ngModel)]="token" required />
+  
+      <button type="submit" class="btn btn-primario">Continuar</button>
+    </form>
+  </main>
+  
