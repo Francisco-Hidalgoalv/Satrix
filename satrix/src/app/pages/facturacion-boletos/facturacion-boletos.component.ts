@@ -13,8 +13,19 @@ export class FacturacionBoletosComponent {
   rfc: string = '';
   token: string = '';
 
+  rfcInvalid: boolean = false;
+  tokenInvalid: boolean = false;
+
   enviarFormulario() {
-    console.log('RFC:', this.rfc);
-    console.log('Token:', this.token);
+    this.rfcInvalid = !(this.rfc.length === 12 || this.rfc.length === 13);
+    this.tokenInvalid = this.token.trim() === '';
+
+    if (this.rfcInvalid || this.tokenInvalid) {
+      return; // Detiene el formulario si hay errores
+    }
+
+    console.log('Formulario válido 🎉');
+    // Aquí iría la navegación o lógica siguiente
   }
 }
+
