@@ -26,4 +26,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/conecta/conecta.component').then(m => m.ConectaComponent),
   },
+  {
+    path: 'facturacion-boletos',
+    loadComponent: () =>
+      import('./pages/facturacion-boletos/facturacion-boletos.component').then(m => m.FacturacionBoletosComponent)
+  },
 ];

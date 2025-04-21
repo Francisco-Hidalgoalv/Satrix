@@ -19,11 +19,12 @@
     <h1 class="titulo-factura">Facturación</h1>
     <div class="factura-container">
       <div class="icon-button">
-        <button id="boleto" class="boleto">
+        <button id="boleto" class="boleto" (click)="irAFacturacion()">
           <span class="material-symbols-outlined">confirmation_number</span>
         </button>
         <label for="boleto">BOLETOS</label>
       </div>
+      
       <div class="icon-button">
         <button id="envios" class="envios">
           <span class="material-symbols-outlined">local_shipping</span>

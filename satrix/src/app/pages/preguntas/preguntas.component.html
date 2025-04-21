@@ -1,1 +1,14 @@
-<p>preguntas works!</p>
+<main class="contenido">
+    <h2 class="titulo-faq">Preguntas Frecuentes</h2>
+  
+    <input type="text" [(ngModel)]="filtro" placeholder="Buscar una pregunta..." class="faq-buscador" />
+  
+    <div class="faq-container">
+      <div class="faq-card" *ngFor="let faq of filtradas">
+        <h4 class="faq-categoria">{{ faq.categoria }}</h4>
+        <h3 class="faq-pregunta">{{ faq.pregunta }}</h3>
+        <p class="faq-respuesta">{{ faq.respuesta }}</p>
+      </div>
+    </div>
+  </main>
+  
