@@ -55,11 +55,18 @@ export class PreguntasComponent {
     }
   ];
 
+  // 🔠 Normaliza el texto quitando acentos y convirtiendo a minúsculas
+  normalizar(texto: string): string {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  // 🔍 Filtro avanzado con normalización
   get filtradas() {
+    const filtroNormalizado = this.normalizar(this.filtro);
     return this.preguntas.filter(p =>
-      p.pregunta.toLowerCase().includes(this.filtro.toLowerCase()) ||
-      p.respuesta.toLowerCase().includes(this.filtro.toLowerCase()) ||
-      p.categoria.toLowerCase().includes(this.filtro.toLowerCase())
+      this.normalizar(p.pregunta).includes(filtroNormalizado) ||
+      this.normalizar(p.respuesta).includes(filtroNormalizado) ||
+      this.normalizar(p.categoria).includes(filtroNormalizado)
     );
   }
 }
