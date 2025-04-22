@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms'; // 👈 IMPORTANTE
   templateUrl: './facturacion-boletos.component.html',
   styleUrls: ['./facturacion-boletos.component.css']
 })
+
 export class FacturacionBoletosComponent {
   rfc: string = '';
   token: string = '';
@@ -27,5 +28,7 @@ export class FacturacionBoletosComponent {
     console.log('Formulario válido 🎉');
     // Aquí iría la navegación o lógica siguiente
   }
+
+  mostrarEjemplo: boolean = false;
 }
 

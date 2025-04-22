@@ -10,6 +10,17 @@
     <input id="token" name="token" type="text" [(ngModel)]="token" required />
     <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
 
-    <button type="submit" class="btn btn-primario">Continuar</button>
+    <!-- Botón -->
+<button class="btn-ver-ticket" (click)="mostrarEjemplo = true">Ver ejemplo de ticket</button>
+
+<!-- Modal -->
+<div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <img src="assets/tickets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
+    <button class="cerrar" (click)="mostrarEjemplo = false">✖</button>
+  </div>
+</div>
+
+
   </form>
 </main>
