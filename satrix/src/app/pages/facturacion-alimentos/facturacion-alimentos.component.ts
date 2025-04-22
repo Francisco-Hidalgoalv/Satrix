@@ -27,5 +27,7 @@ export class FacturacionAlimentosComponent {
     console.log('Formulario válido 🎉');
     // Aquí iría la navegación o lógica siguiente
   }
+
+  mostrarEjemplo: boolean = false;
 }
 

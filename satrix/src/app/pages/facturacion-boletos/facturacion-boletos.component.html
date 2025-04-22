@@ -11,15 +11,15 @@
     <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
 
     <!-- Botón -->
-<button type="button" class="btn-ver-ticket" (click)="mostrarEjemplo = true">Ver ejemplo de ticket</button>
-
-<!-- Modal -->
-<div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
-  <div class="modal-contenido" (click)="$event.stopPropagation()">
-    <img src="assets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
-    <button class="cerrar" (click)="mostrarEjemplo = false">✖</button>
-  </div>
-</div>
+    <button type="button" class="btn-ver-ticket" (click)="mostrarEjemplo = true">Ver ejemplo de ticket</button>
+      
+    <!-- Modal -->
+    <div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
+      <div class="modal-contenido" (click)="$event.stopPropagation()">
+        <img src="assets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
+        <button class="cerrar" (click)="mostrarEjemplo = false">✖</button>
+      </div>
+    </div>
 
 
   </form>
