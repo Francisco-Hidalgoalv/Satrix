@@ -1,8 +1,15 @@
 <header class="header">
   <div class="logo">
-    <img src="https://www.facturaelectronicagfa.mx/assets/img/logo.png" alt="Logo Flecha Amarilla" />
+    <img src="https://raw.githubusercontent.com/Azuushi/archivo/refs/heads/main/logo.png" alt="Logo Flecha Amarilla" />
   </div>
-  <nav class="nav">
+
+  <!-- Botón hamburguesa que cambia a ✖ al abrir -->
+  <button class="hamburger" (click)="menuAbierto = !menuAbierto">
+    {{ menuAbierto ? '✖' : '☰' }}
+  </button>
+
+  <!-- Menú con clase dinámica -->
+  <nav class="nav" [class.open]="menuAbierto">
     <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">INICIO</a>
     <a routerLink="/aviso" routerLinkActive="activo">AVISO DE PRIVACIDAD</a>
     <a routerLink="/preguntas" routerLinkActive="activo">PREGUNTAS FRECUENTES</a>
