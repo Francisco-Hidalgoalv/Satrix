@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PreguntasComponent {
   filtro: string = '';
+  preguntaAbierta: any = null; // ← Estado de pregunta expandida
 
   preguntas = [
     {
@@ -55,12 +56,10 @@ export class PreguntasComponent {
     }
   ];
 
-  // 🔠 Normaliza el texto quitando acentos y convirtiendo a minúsculas
   normalizar(texto: string): string {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
-  // 🔍 Filtro avanzado con normalización
   get filtradas() {
     const filtroNormalizado = this.normalizar(this.filtro);
     return this.preguntas.filter(p =>
@@ -68,5 +67,9 @@ export class PreguntasComponent {
       this.normalizar(p.respuesta).includes(filtroNormalizado) ||
       this.normalizar(p.categoria).includes(filtroNormalizado)
     );
+  }
+
+  alternarAcordeon(pregunta: any) {
+    this.preguntaAbierta = this.preguntaAbierta === pregunta ? null : pregunta;
   }
 }
