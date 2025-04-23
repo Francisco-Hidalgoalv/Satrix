@@ -93,3 +93,60 @@
     cursor: pointer;
     transition: 0.3s ease;
   }
+
+  .boton-asistente {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f79c1d;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton-asistente:hover {
+    transform: scale(1.1);
+  }
+  
+  .contenedor-asistente {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    max-width: 300px;
+    background-color: #fffdf6;
+    border: 2px solid #f79c1d;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .acciones-asistente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .acciones-asistente button {
+    background-color: #f79c1d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .acciones-asistente button:hover {
+    background-color: #e39010;
+  }
+  
