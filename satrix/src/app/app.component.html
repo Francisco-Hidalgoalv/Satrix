@@ -3,19 +3,17 @@
     <img src="https://raw.githubusercontent.com/Azuushi/archivo/refs/heads/main/logo.png" alt="Logo Flecha Amarilla" />
   </div>
 
-  <!-- Botón hamburguesa que cambia a ✖ al abrir -->
   <button class="hamburger" (click)="menuAbierto = !menuAbierto">
     {{ menuAbierto ? '✖' : '☰' }}
   </button>
 
-  <!-- Menú con clase dinámica -->
   <nav class="nav" [class.open]="menuAbierto">
-    <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">INICIO</a>
-    <a routerLink="/aviso" routerLinkActive="activo">AVISO DE PRIVACIDAD</a>
-    <a routerLink="/preguntas" routerLinkActive="activo">PREGUNTAS FRECUENTES</a>
-    <a routerLink="/contacto" routerLinkActive="activo">CONTACTO</a>
+    <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" (click)="menuAbierto = false">INICIO</a>
+    <a routerLink="/aviso" routerLinkActive="activo" (click)="menuAbierto = false">AVISO DE PRIVACIDAD</a>
+    <a routerLink="/preguntas" routerLinkActive="activo" (click)="menuAbierto = false">PREGUNTAS FRECUENTES</a>
+    <a routerLink="/contacto" routerLinkActive="activo" (click)="menuAbierto = false">CONTACTO</a>
     <a href="https://www.conectagfa.com.mx/#/es/principal" target="_blank" rel="noopener noreferrer">CONECTA GFA</a>
-  </nav>
+      </nav>
 </header>
 
 <router-outlet></router-outlet>

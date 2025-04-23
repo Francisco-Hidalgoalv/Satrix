@@ -37,10 +37,16 @@ body {
   font-family: 'Segoe UI', sans-serif;
   border-radius: 6px;
   transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
 }
 
+.nav a.activo {
+  background-color: #0f4c5c; /* verde moderno */
+  color: white !important;
+}
 .nav a:hover {
-  color: #22c55e; /* verde bonito */
+  background-color: #0f4c5c; /* verde muy claro */
+  color: #F9F5F0;
 }
 
 .hamburger {
@@ -61,7 +67,7 @@ body {
   .hamburger {
     display: block;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 20px;
   }
 

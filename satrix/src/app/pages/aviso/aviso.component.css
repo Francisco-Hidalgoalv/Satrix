@@ -1,26 +1,42 @@
 .aviso-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    max-width: 1250px;
-    background-color: #fff5cc;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #f8fafc; /* gris azulado claro */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.descripcion {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 iframe {
-    border-radius: 12px;
-    box-shadow: 0 0 10px #ccc;
-    margin-bottom: 15px;
-    height: 475px;
-    margin-top: 15px;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
   
 h1 {
-    color: #f79c1d;
-    margin-bottom: 10px;
-    margin-top: -10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f4c5c; /* tu color institucional */
+  margin-bottom: 1rem;
+  text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .aviso-container iframe {
+      height: 220px;
+    }
+  
+    .aviso-container h2 {
+      font-size: 1.5rem;
+    }
   }

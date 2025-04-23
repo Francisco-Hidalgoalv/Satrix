@@ -1,45 +1,91 @@
+.contacto {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2rem;
+  color: #264653; /* Texto principal más moderno */
+  margin-bottom: 2.5rem;
+}
+
+/* Contenedor general */
 .contacto-padre {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: nowrap; /* 👈 Para que no se vayan a otra línea */
-    overflow-x: auto;   /* 👈 Scroll horizontal si no caben */
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.contacto-container {
+  background: linear-gradient(to bottom right, #f8fafc, #f8fafc);
+  padding: 24px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: left;
+}
+
+.contacto-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.15);
+}
+
+.contacto-container h2 {
+  color: #3b7660;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.persona {
+  margin-bottom: 1.5rem;
+}
+
+.nombre {
+  font-weight: 600;
+  color: #264653;
+  margin-bottom: 2px;
+}
+
+.departamento {
+  font-size: 1rem;
+  color: #264653;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.correo {
+  font-style: italic;
+  font-size: 0.93rem;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.contacto-container a {
+  color: #374151;
+  text-decoration: none;
+  font-style: italic;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contacto-container a:hover {
+  color: #3b7660;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .contacto h2 {
+    font-size: 1.5rem;
   }
-  
+
   .contacto-container {
-    flex: 0 0 auto;
-    width: 280px;
-    background-color: #fff5cc;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
   }
 
-  .contacto-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+  .contacto-padre {
+    padding: 0 0.5rem 2rem;
+    gap: 1rem;
   }
-
-  .persona {
-    margin-bottom: 25px;
-  }
-  
-  .nombre {
-    font-weight: bold;
-    color: #999;
-  }
-  
-  .correo {
-    font-style: italic;
-    color: #555;
-    font-size: 14px;
-  }
-
-  .departamento {
-    font-size: 17px;
-    color: #f79c1d;
-  }
-  
+}
