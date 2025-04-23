@@ -1,0 +1,40 @@
+.burbuja-asistente {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    border-radius: 50%;
+    background-color: #f79c1d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .burbuja-asistente.abierto {
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    background-color: #F9F5F0;
+    padding: 10px;
+    flex-direction: column;
+  }
+  
+  /* En escritorio: burbuja SIEMPRE ABIERTA, sin click */
+  @media (min-width: 768px) {
+    .burbuja-asistente {
+      width: 320px;
+      height: auto;
+      border-radius: 16px;
+      background-color: #F9F5F0;
+      padding: 10px;
+      cursor: default;
+      flex-direction: column;
+    }
+  }
+  
