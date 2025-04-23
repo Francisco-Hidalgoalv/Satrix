@@ -1,7 +1,7 @@
 .formulario-factura {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #fff5cc;
+    background-color: rgba(35, 61, 77, 0.05);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
@@ -17,7 +17,7 @@
   
   input {
     padding: 10px;
-    border: 2px solid #f79c1d;
+    border: 2px solid #0f4c5c;
     border-radius: 5px;
     font-size: 16px;
   }
@@ -84,7 +84,7 @@
   }
   
   .btn-btn-primario{
-    background-color: #f79c1d;
+    background-color: #0f4c5c;
     color: white;
     border: none;
     padding: 10px 20px;

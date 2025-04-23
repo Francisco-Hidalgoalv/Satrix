@@ -1,11 +1,15 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 const genai = require("@google/generative-ai");
-const visionRoutes = require("./routes/visionRoutes"); // OCR
 
-const app = express();
+const visionRoutes = require("./routes/visionRoutes"); // OCR
+const rfcRoutes = require("./routes/rfcRoutes");       // RFC desde imagen o PDF
+
+const app = express(); // 👈 ¡Ahora sí está antes!
+
 const port = process.env.PORT || 3001;
 
 app.use(cors());
@@ -16,8 +20,9 @@ app.get("/", (req, res) => {
   res.send("API de Satrix funcionando");
 });
 
-// RUTA: Extraer token del boleto desde imagen (Vertex AI OCR)
-app.use("/api/vision", visionRoutes);
+// RUTAS OCR
+app.use("/api/vision", visionRoutes); // Imagen para token
+app.use("/api/vision", rfcRoutes);    // Imagen o PDF para RFC
 
 // RUTA: Validar error con Gemini (asistente virtual)
 app.post("/api/validar-error", async (req, res) => {

@@ -2,10 +2,8 @@
   <h2>Facturación de Boletos</h2>
 
   <form class="formulario-factura" (ngSubmit)="enviarFormulario()" #formulario="ngForm">
-    <label for="rfc">RFC:</label>
-    <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required />
-    <p class="error" *ngIf="rfcInvalid">El RFC debe tener entre 12 y 13 caracteres.</p>
 
+    <!-- TOKEN PRIMERO -->
     <label for="token">Token de Boleto:</label>
     <input id="token" name="token" type="text" [(ngModel)]="token" required />
     <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
@@ -18,6 +16,20 @@
       Token detectado: <strong>{{ tokenExtraido }}</strong>
     </p>
 
+    <!-- RFC DESPUÉS -->
+    <label for="rfc">RFC:</label>
+    <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required />
+    <p class="error" *ngIf="rfcInvalid">El RFC debe tener entre 12 y 13 caracteres.</p>
+
+    <label for="documentoRFC">Sube tu constancia fiscal:</label>
+    <input type="file" id="documentoRFC" (change)="onDocumentoRFCSeleccionado($event)" accept=".pdf,image/*" />
+    <button type="button" (click)="analizarRFC()">Leer RFC automáticamente</button>
+
+    <p class="resultado-token" *ngIf="rfcExtraido">
+      RFC detectado: <strong>{{ rfcExtraido }}</strong>
+    </p>
+
+    <!-- MODAL -->
     <div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
       <div class="modal-contenido" (click)="$event.stopPropagation()">
         <img src="assets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
@@ -28,11 +40,11 @@
     <button type="submit" class="btn-btn-primario">Facturar</button>
   </form>
 
+  <!-- ASISTENTE -->
   <div class="boton-asistente" (click)="toggleAsistente()">💬</div>
 
   <div class="contenedor-asistente" *ngIf="asistenteVisible">
     <app-asistente-virtual [mensaje]="mensajeAsistente"></app-asistente-virtual>
-
     <div class="acciones-asistente">
       <button (click)="accionRFC()">¿No conoces tu RFC?</button>
       <button (click)="accionToken()">¿No encuentras el token?</button>
