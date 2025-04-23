@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AsistenteVirtualComponent } from '../../components/asistente-virtual/asistente-virtual.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AsistenteVirtualComponent } from '../../components/asistente-virtual/asistente-virtual.component';
 
 @Component({
   selector: 'app-facturacion-boletos',
@@ -14,6 +14,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class FacturacionBoletosComponent {
   rfc: string = '';
   token: string = '';
+  rfcExtraido: string | null = null;
+  tokenExtraido: string | null = null;
+
+  archivoSeleccionado: File | null = null;
+  documentoRFC: File | null = null;
 
   rfcInvalid: boolean = false;
   tokenInvalid: boolean = false;
@@ -21,9 +26,6 @@ export class FacturacionBoletosComponent {
   mensajeAsistente: string = '';
   mostrarEjemplo: boolean = false;
   asistenteVisible: boolean = false;
-
-  archivoSeleccionado: File | null = null;
-  tokenExtraido: string | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -49,7 +51,7 @@ export class FacturacionBoletosComponent {
 
   analizarImagen(): void {
     if (!this.archivoSeleccionado) {
-      alert("Por favor selecciona una imagen primero.");
+      alert("Por favor selecciona una imagen del boleto.");
       return;
     }
 
@@ -69,6 +71,39 @@ export class FacturacionBoletosComponent {
         error: (err) => {
           console.error(err);
           alert('Error al procesar la imagen.');
+        }
+      });
+  }
+
+  onDocumentoRFCSeleccionado(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files?.length) {
+      this.documentoRFC = input.files[0];
+    }
+  }
+
+  analizarRFC(): void {
+    if (!this.documentoRFC) {
+      alert("Por favor selecciona tu constancia fiscal (imagen o PDF).");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('documento', this.documentoRFC);
+
+    this.http.post<any>('http://localhost:3001/api/vision/extraer-rfc', formData)
+      .subscribe({
+        next: (res) => {
+          this.rfcExtraido = res.rfcExtraido;
+          if (this.rfcExtraido) {
+            this.rfc = this.rfcExtraido;
+          } else {
+            alert('No se detectó un RFC válido.');
+          }
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Error al procesar el documento.');
         }
       });
   }

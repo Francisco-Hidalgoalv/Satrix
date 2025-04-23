@@ -118,7 +118,7 @@ body {
   padding: 30px;
 }
     .contenido h2 {
-      color: #f79c1d;
+      color: #0f4c5c;
       margin-bottom: 20px;
       margin-top: 1px;
     }
@@ -295,7 +295,7 @@ body {
       color: #0f4c5c;
       font-weight: 700;
       margin-bottom: 1rem;
-      border-bottom: 2px solid rgba(15, 76, 92, 0.2); /* suave */
+      border-bottom: 2px solid rgba(15, 76, 92, 0.2);
       display: inline-block;
       padding-bottom: 4px;
     }
@@ -311,7 +311,7 @@ body {
     }
     
     .TTUR:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(247, 156, 29, 0.2); 
       transform: scale(1.1);
     }
   
@@ -325,7 +325,7 @@ body {
     }
     
     .primera_plus:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(247, 156, 29, 0.2); 
       transform: scale(1.1);
     }
   
@@ -339,7 +339,7 @@ body {
     }
     
     .flecha_amarilla:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(247, 156, 29, 0.2); 
       transform: scale(1.1);
     }
   
@@ -353,7 +353,7 @@ body {
     }
     
     .boletos_bus:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(247, 156, 29, 0.2);
       transform: scale(1.1);
     }
   
@@ -367,7 +367,7 @@ body {
     }
     
     .consumo_alimentos:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(247, 156, 29, 0.2); 
       transform: scale(1.1);
     }
   
@@ -379,7 +379,7 @@ body {
       align-items: center;
       width: 140px;
       padding: 1rem;
-      background-color: rgba(35, 61, 77, 0.05); /* combina con #233D4D */
+      background-color: rgba(35, 61, 77, 0.05); 
       border-radius: 12px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
@@ -394,8 +394,8 @@ body {
     .factura-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;      /* Centrado horizontal */
-    align-items: center;          /* Centrado vertical */
+    justify-content: center;   
+    align-items: center;         
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
@@ -413,19 +413,25 @@ body {
   }
   
   .card:hover {
-    background-color: rgba(208, 245, 227, 0.4); /* verde pastel suave */
+    background-color: rgba(208, 245, 227, 0.4); 
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease-in-out;
   }
 
-    flex-direction: row;
-    flex-wrap: wrap; /* 👈 para que hagan salto de línea si no caben */
-    justify-content: center;
-    gap: 20px; /* alternativa moderna al margin */
-    max-width: 800px;
-    margin: 20px auto;
-  }
+  .CFDI-container,
+.factura-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;                    
+  max-width: 1000px;           
+  margin: 20px auto;            
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
   .resultado-token {
     background: #e8f5e9;
