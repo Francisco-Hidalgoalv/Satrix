@@ -391,7 +391,7 @@ body {
       box-shadow: 0 8px 16px rgba(15, 76, 92, 0.2);
     }
     .CFDI-container,
-  .factura-container {
+    .factura-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;      /* Centrado horizontal */
@@ -418,3 +418,29 @@ body {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease-in-out;
   }
+
+    flex-direction: row;
+    flex-wrap: wrap; /* 👈 para que hagan salto de línea si no caben */
+    justify-content: center;
+    gap: 20px; /* alternativa moderna al margin */
+    max-width: 800px;
+    margin: 20px auto;
+  }
+
+  .resultado-token {
+    background: #e8f5e9;
+    padding: 0.5em;
+    border-left: 4px solid #4caf50;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
