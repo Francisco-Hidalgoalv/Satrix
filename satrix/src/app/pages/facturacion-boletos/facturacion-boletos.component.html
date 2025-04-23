@@ -10,7 +10,14 @@
     <input id="token" name="token" type="text" [(ngModel)]="token" required />
     <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
 
-      
+    <label for="imagenBoleto">Sube la imagen del boleto:</label>
+    <input type="file" id="imagenBoleto" (change)="onArchivoSeleccionado($event)" accept="image/*" />
+    <button type="button" (click)="analizarImagen()">Leer token automáticamente</button>
+
+    <p class="resultado-token" *ngIf="tokenExtraido">
+      Token detectado: <strong>{{ tokenExtraido }}</strong>
+    </p>
+
     <div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
       <div class="modal-contenido" (click)="$event.stopPropagation()">
         <img src="assets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
@@ -19,12 +26,9 @@
     </div>
 
     <button type="submit" class="btn-btn-primario">Facturar</button>
-
   </form>
 
-  <div class="boton-asistente" (click)="toggleAsistente()">
-    💬
-  </div>
+  <div class="boton-asistente" (click)="toggleAsistente()">💬</div>
 
   <div class="contenedor-asistente" *ngIf="asistenteVisible">
     <app-asistente-virtual [mensaje]="mensajeAsistente"></app-asistente-virtual>
@@ -34,5 +38,4 @@
       <button (click)="accionToken()">¿No encuentras el token?</button>
     </div>
   </div>
-
 </main>

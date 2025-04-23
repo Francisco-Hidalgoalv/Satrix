@@ -360,3 +360,21 @@ body {
     max-width: 800px;
     margin: 20px auto;
   }
+
+  .resultado-token {
+    background: #e8f5e9;
+    padding: 0.5em;
+    border-left: 4px solid #4caf50;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  

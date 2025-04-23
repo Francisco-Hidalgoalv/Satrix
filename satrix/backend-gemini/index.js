@@ -3,13 +3,23 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const genai = require("@google/generative-ai");
+const visionRoutes = require("./routes/visionRoutes"); // OCR
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
+// RUTA BASE DE PRUEBA
+app.get("/", (req, res) => {
+  res.send("API de Satrix funcionando");
+});
+
+// RUTA: Extraer token del boleto desde imagen (Vertex AI OCR)
+app.use("/api/vision", visionRoutes);
+
+// RUTA: Validar error con Gemini (asistente virtual)
 app.post("/api/validar-error", async (req, res) => {
   const { rfc, token, errores } = req.body;
 
@@ -24,9 +34,7 @@ app.post("/api/validar-error", async (req, res) => {
 
   try {
     const model = new genai.GenerativeModel("gemini-pro");
-    const generationConfig = {
-      temperature: 0.7,
-    };
+    const generationConfig = { temperature: 0.7 };
 
     const result = await model.generateContent({
       contents: [{ parts: [{ text: mensaje }] }],
@@ -45,6 +53,7 @@ app.post("/api/validar-error", async (req, res) => {
   }
 });
 
+// Iniciar servidor
 app.listen(port, () => {
   console.log(`🧠 API corriendo en http://localhost:${port}`);
 });
