@@ -10,4 +10,13 @@ import { CommonModule } from '@angular/common';
 })
 export class AsistenteVirtualComponent {
   @Input() mensaje: string = '';
+  mostrarAsistente: boolean = true;
+
+  cerrarAsistente() {
+    this.mostrarAsistente = false;
+  }
+
+  abrirAsistente() {
+    this.mostrarAsistente = true;
+  }
 }
