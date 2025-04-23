@@ -58,18 +58,34 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .header {
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .factura-container,
+  .CFDI-container {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 20px;
   }
 
   .hamburger {
-    display: block;
+    font-size: 1.8rem;
+    background: #EAF4F4;
+    border: none;
+    color: #0f4c5c;
+    display: none;
+    cursor: pointer;
     position: absolute;
-    top: 5px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
 
   .nav {
     display: none;
@@ -77,6 +93,9 @@ body {
     width: 100%;
     margin-top: 1rem;
     padding-left: 10px;
+    align-items: flex-start;
+    background-color: #F9F5F0;
+    padding: 1rem 1.5rem;
   }
 
   .nav.open {
@@ -84,9 +103,9 @@ body {
   }
 
   .nav a {
+    width: 100%;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-    width: 100%;
   }
 
   .header img {
@@ -188,7 +207,7 @@ body {
     
   
     .titulo-factura {
-      color: #f79c1d;
+      color: #233D4D;
       margin-bottom: -20px;
     }
   
@@ -212,7 +231,7 @@ body {
     }
     
     .boleto:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -226,7 +245,7 @@ body {
     }
     
     .envios:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -240,24 +259,24 @@ body {
     }
     
     .alimentos:hover {
-      background-color: rgba(247, 156, 29, 0.2); /* efecto hover suave */
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
     
     .material-symbols-outlined {
       font-size: 40px;
-      color: #f79c1d;
+      color: #0f4c5c;
     }
     
     .icon-button label {
-      margin-top: 4px;
+      margin-top: 8px;
       font-weight: bold;
-      font-size: 14px;
-      color: #333;
+      font-size: 0.9rem;
+      color: #233D4D;
     }
     
   .titulo-CFDI {
-      color: #f79c1d;
+      color: #233D4D;
       margin-bottom: -20px;
     }
   
@@ -270,7 +289,18 @@ body {
       max-width: 800px;
       width: 100%;
     }
-  
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #0f4c5c;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid rgba(15, 76, 92, 0.2); /* suave */
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    
+    
     .TTUR {
       background: none;
       border: none;
@@ -342,17 +372,53 @@ body {
     }
   
     .icon-button {
+      width: 100%;
+      max-width: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 10px; /* 👈 SEPARA cada botón del siguiente */
-      text-align: center;
-      max-width: 120px; /* opcional: para que no crezca demasiado el texto */
+      width: 140px;
+      padding: 1rem;
+      background-color: rgba(35, 61, 77, 0.05); /* combina con #233D4D */
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
-  
+
+
+    .icon-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(15, 76, 92, 0.2);
+    }
     .CFDI-container,
-  .factura-container {
+    .factura-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;      /* Centrado horizontal */
+    align-items: center;          /* Centrado vertical */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .card {
+    transition: all 0.25s ease-in-out;
+  }
+  
+  .card.selected {
+    border: 2px solid #0f4c5c;
+    background-color: rgba(208, 245, 227, 0.8);
+  }
+  
+  .card:hover {
+    background-color: rgba(208, 245, 227, 0.4); /* verde pastel suave */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+  }
+
     flex-direction: row;
     flex-wrap: wrap; /* 👈 para que hagan salto de línea si no caben */
     justify-content: center;
