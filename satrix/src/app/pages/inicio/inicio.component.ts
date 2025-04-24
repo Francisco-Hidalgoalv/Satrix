@@ -14,6 +14,7 @@ export class InicioComponent implements OnInit {
   mensajeAsistente: string = 'Bienvenid@ al sistema de Satrix. ¿En qué puedo ayudarte?';
   asistenteAbierto: boolean = false;
   pantallaGrande: boolean = false;
+  mostrarBienvenida: boolean = true;
 
   constructor(private router: Router) {}
 
@@ -21,9 +22,11 @@ export class InicioComponent implements OnInit {
     if (typeof window !== 'undefined') {
       this.detectarPantalla();
       window.addEventListener('resize', () => this.detectarPantalla());
+
+      // Solo mostrar bienvenida si no fue cerrada antes
+      this.mostrarBienvenida = !sessionStorage.getItem('bienvenidaOculta');
     }
   }
-  
 
   detectarPantalla() {
     this.pantallaGrande = window.innerWidth >= 768;

@@ -1,448 +1,506 @@
-body {
-  background-color: #F9F5F0; 
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+:root {
+  --fuente-principal: 'Rubik', sans-serif;
+  --fuente-secundaria: 'Space Grotesk', sans-serif;
 }
-
-.header {
-  background-color: #F9F5F0;
-  color: #111;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border-bottom: 2px solid #ccc;
-  position: relative;
-}
-
-.header .logo img {
-  height: 40px;
-  max-width: 160px;
-  object-fit: contain;
-  display: block;
-}
-
-.nav {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-}
-
-.nav a.activo {
-  background-color: #f56a00; 
-  color: white !important;
-}
-.nav a:hover {
-  background-color: #f56a00; 
-  color: #F9F5F0;
-}
-
-.hamburger {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #111;
-  display: none;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .factura-container,
-  .CFDI-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .hamburger {
-    font-size: 1.8rem;
-    background: #EAF4F4;
-    border: none;
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    padding-left: 10px;
-    align-items: flex-start;
+/* ===== RESET & BASE ===== */
+  body {
     background-color: #F9F5F0;
-    padding: 1rem 1.5rem;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    font-family: var(--fuente-principal);
   }
 
-  .nav.open {
+  h1, h2, h3 {
+    font-family: var(--fuente-secundaria);
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background-color: #F9F5F0;
+    color: #111;
+    padding: 12px 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid #ccc;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .logo img {
+    height: 40px;
+    max-width: 160px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ===== NAVIGATION DESKTOP ===== */
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
   }
 
   .nav a {
-    width: 100%;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
-  .header img {
-    height: 36px;
+  .nav a.activo {
+    background-color: #f56a00;
+    color: #fff !important;
   }
-}
 
-.contenido {
-  text-align: center;
-  padding: 30px;
-}
-    .contenido h2 {
-      color: #0f4c5c;
-      margin-bottom: 20px;
-      margin-top: 1px;
-    }
-    
-    .reglas-container {
+  .nav a:hover {
+    background-color: #f56a00;
+    color: #fff;
+  }
+
+  /* ===== HAMBURGER MENU (MOBILE ONLY) ===== */
+  .hamburger {
+    font-size: 1.6rem;
+    background: #ffffff;
+    border: none;
+    color: #0f4c5c;
+    border-radius: 50%;
+    width: 42px;
+    height: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: none;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(15, 76, 92, 0.08);
+    transform: scale(1.05);
+  }
+
+  /* ===== MOBILE NAVIGATION ===== */
+  @media (max-width: 768px) {
+    .hamburger {
       display: flex;
-      justify-content: space-between; 
-      gap: 20px; 
-      flex-wrap: wrap; 
-      margin-bottom: 30px;
-    }
-  
-    .reglas1 {
-      background-color:#fff5cc;
-      max-width: 800px;
-      height: 120px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      flex: 1;
-      min-width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .reglas1:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
-    }
-    
-    .reglas1 ul {
-      text-align: left;
-      list-style: disc;
-      margin-bottom: 20px;
-      text-align: center;
-      margin-top: 1px;
-    }
-    
-    .reglas1 ul li {
-      margin: 20px 0;
-      margin-top: 5px;
-    }
-    
-    .reglas2 {
-      background-color:#fff5cc;
-      max-width: 800px;
-      height: 120px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      flex: 1;
-      min-width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .reglas2:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
-    }
-    
-    .reglas2 ul {
-      text-align: left;
-      list-style: disc;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .reglas2 ul li {
-      margin: 20px 0;
-      
-    }
-  
-    .reglas1 ul,
-    .reglas2 ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    .reglas1 ul li::before,
-    .reglas2 ul li::before {
-      content: "– ";
-      color: #000000;
-      font-weight: bold;
-    }
-    
-  
-    .titulo-factura {
-      color: #233D4D;
-      margin-bottom: -20px;
-    }
-  
-    .factura-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 0 auto;
-      justify-content: space-between;
-      max-width: 800px;
-      width: 100%;
-    }
-    
-    .boleto {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;  
-    }
-    
-    .boleto:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .envios {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .envios:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .alimentos {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .alimentos:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-    
-    .material-symbols-outlined {
-      font-size: 40px;
-      color: #0f4c5c;
-    }
-    
-    .icon-button label {
-      margin-top: 8px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      color: #233D4D;
-    }
-    
-  .titulo-CFDI {
-      color: #233D4D;
-      margin-bottom: -20px;
-    }
-  
-    .CFDI-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 0 auto;
-      justify-content: space-between;
-      max-width: 800px;
-      width: 100%;
     }
 
-    .section-title {
-      font-size: 1.5rem;
-      color: #0f4c5c;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid rgba(15, 76, 92, 0.2);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
-    
-    
-    .TTUR {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;  
-    }
-    
-    .TTUR:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .primera_plus {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .primera_plus:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .flecha_amarilla {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .flecha_amarilla:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .boletos_bus {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .boletos_bus:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .consumo_alimentos {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    
-    .consumo_alimentos:hover {
-      background-color: rgba(208, 245, 227, 0.7);
-      transform: scale(1.1);
-    }
-  
-    .icon-button {
-      width: 100%;
-      max-width: 300px;
-      display: flex;
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      width: 140px;
-      padding: 1rem;
-      background-color: rgba(35, 61, 77, 0.05); 
+      background-color: #F9F5F0;
+      padding: 4rem 1rem 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 999;
+    }
+
+    .nav.open {
+      display: flex;
+    }
+
+    .nav a {
+      width: 80%;
+      padding: 14px 0;
+      margin: 6px 0;
+      text-align: center;
       border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #0f4c5c;
+      transition: background-color 0.3s ease;
     }
 
+    .nav a:hover {
+      background-color: rgba(247, 156, 29, 0.12);
+    }
 
-    .icon-button:hover {
+    .nav a.activo {
+      background-color: rgba(247, 156, 29, 0.2);
+      color: #111;
+    }
+
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  /* ===== SEARCH BAR ===== */
+  .faq-buscador {
+    display: block;
+    margin: 0 auto 2.5rem;
+    padding: 12px 2px;
+    width: 90%;
+    max-width: 480px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .faq-buscador:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 76, 92, 0.18);
+  }
+
+  .contenido {
+    text-align: center;
+    padding: 30px;
+  }
+      .contenido h2 {
+        color: #0f4c5c;
+        margin-bottom: 20px;
+        margin-top: 1px;
+      }
+      
+      .reglas-container {
+        display: flex;
+        justify-content: space-between; 
+        gap: 20px; 
+        flex-wrap: wrap; 
+        margin-bottom: 30px;
+      }
+    
+      .reglas1 {
+        background-color:#fff5cc;
+        max-width: 800px;
+        height: 120px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        flex: 1;
+        min-width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    
+      .reglas1:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+      }
+      
+      .reglas1 ul {
+        text-align: left;
+        list-style: disc;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 1px;
+      }
+      
+      .reglas1 ul li {
+        margin: 20px 0;
+        margin-top: 5px;
+      }
+      
+      .reglas2 {
+        background-color:#fff5cc;
+        max-width: 800px;
+        height: 120px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        flex: 1;
+        min-width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    
+      .reglas2:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 20px rgba(247, 156, 29, 0.3);
+      }
+      
+      .reglas2 ul {
+        text-align: left;
+        list-style: disc;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+      .reglas2 ul li {
+        margin: 20px 0;
+        
+      }
+    
+      .reglas1 ul,
+      .reglas2 ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      
+      .reglas1 ul li::before,
+      .reglas2 ul li::before {
+        content: "– ";
+        color: #000000;
+        font-weight: bold;
+      }
+      
+    
+      .titulo-factura {
+        color: #233D4D;
+        margin-bottom: -20px;
+      }
+    
+      .factura-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        max-width: 800px;
+        width: 100%;
+      }
+      
+      .boleto {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;  
+      }
+      
+      .boleto:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .envios {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .envios:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .alimentos {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .alimentos:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+      
+      .material-symbols-outlined {
+        font-size: 40px;
+        color: #0f4c5c;
+      }
+      
+      .icon-button label {
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #233D4D;
+      }
+      
+    .titulo-CFDI {
+        color: #233D4D;
+        margin-bottom: -20px;
+      }
+    
+      .CFDI-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        color: #0f4c5c;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid rgba(15, 76, 92, 0.2);
+        display: inline-block;
+        padding-bottom: 4px;
+      }
+      
+      
+      .TTUR {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;  
+      }
+      
+      .TTUR:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .primera_plus {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .primera_plus:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .flecha_amarilla {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .flecha_amarilla:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .boletos_bus {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .boletos_bus:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .consumo_alimentos {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .consumo_alimentos:hover {
+        background-color: rgba(208, 245, 227, 0.7);
+        transform: scale(1.1);
+      }
+    
+      .icon-button {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        padding: 1rem;
+        background-color: rgba(35, 61, 77, 0.05); 
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+
+      .icon-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(15, 76, 92, 0.2);
+      }
+      .CFDI-container,
+      .factura-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;   
+      align-items: center;         
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .card {
+      transition: all 0.25s ease-in-out;
+    }
+    
+    .card.selected {
+      border: 2px solid #0f4c5c;
+      background-color: rgba(208, 245, 227, 0.8);
+    }
+    
+    .card:hover {
+      background-color: rgba(208, 245, 227, 0.4); 
       transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(15, 76, 92, 0.2);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease-in-out;
     }
+
     .CFDI-container,
-    .factura-container {
+  .factura-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;   
-    align-items: center;         
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                    
+    max-width: 1000px;           
+    margin: 20px auto;            
     padding: 2rem 1rem;
     text-align: center;
   }
 
-  .card {
-    transition: all 0.25s ease-in-out;
-  }
-  
-  .card.selected {
-    border: 2px solid #0f4c5c;
-    background-color: rgba(208, 245, 227, 0.8);
-  }
-  
-  .card:hover {
-    background-color: rgba(208, 245, 227, 0.4); 
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .CFDI-container,
-.factura-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;                    
-  max-width: 1000px;           
-  margin: 20px auto;            
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-  .resultado-token {
-    background: #e8f5e9;
-    padding: 0.5em;
-    border-left: 4px solid #4caf50;
-    margin-top: 10px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 0.9em;
-  }
-  
-  button {
-    margin-top: 10px;
-    cursor: pointer;
-  }
+    .resultado-token {
+      background: #e8f5e9;
+      padding: 0.5em;
+      border-left: 4px solid #4caf50;
+      margin-top: 10px;
+    }
+    
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    
+    button {
+      margin-top: 10px;
+      cursor: pointer;
+    }

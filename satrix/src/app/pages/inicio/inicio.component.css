@@ -1,0 +1,56 @@
+.mensaje-bienvenida {
+    margin: 0 auto 2rem;
+    padding: 1.5rem 2rem;
+    max-width: 680px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #222;
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  .mensaje-bienvenida strong {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: #000;
+  }
+  
+  .mensaje-bienvenida .emoji {
+    font-size: 1.6rem;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  /* Animación de entrada */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(5px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    .mensaje-bienvenida {
+      padding: 1rem;
+      width: 90%;
+      font-size: 1rem;
+    }
+  }
+  
