@@ -1,7 +1,7 @@
 .recuperacion-container{
     max-width: 500px;
     margin: 0 auto;
-    background-color: #fff5cc;
+    background: linear-gradient(to bottom right, #f8fafc, #f8fafc);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
@@ -11,16 +11,16 @@
 }
 label {
     font-weight: bold;
-    color: #000000;
+    color: #264653;
   }
   input {
     padding: 10px;
-    border: 2px solid #f79c1d;
+    border: 2px solid #3b7660;
     border-radius: 5px;
     font-size: 16px;
   }
   .btn-btn-primario{
-    background-color: #f79c1d;
+    background-color: #f56a00;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -30,6 +30,6 @@ label {
     transition: 0.3s ease;
   }
     .btn-btn-primario:hover {
-        background-color: #f79c1d;
+        background-color: #f56a00;
         opacity: 0.8;
     }
