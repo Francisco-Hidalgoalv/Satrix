@@ -1,7 +1,16 @@
-<div class="asistente-container">
-    <img src="assets/avatar.png" alt="Asistente virtual" class="avatar" />
-    <div class="mensaje">
-      <p>{{ mensaje }}</p>
-    </div>
+<div class="asistente-container" 
+     *ngIf="mostrarAsistente" 
+     [ngClass]="{ 'cerrando': cerrandoAsistente }">
+  <button class="cerrar-asistente" (click)="cerrarAsistente()">×</button>
+  <img src="assets/avatar.png" alt="Asistente virtual" class="avatar" />
+  <div class="mensaje">
+    <p>{{ mensaje }}</p>
   </div>
-  
+</div>
+
+<button *ngIf="!mostrarAsistente && !cerrandoAsistente" 
+        class="burbuja-asistente" 
+        (click)="abrirAsistente()" 
+        aria-label="Abrir asistente">
+  <img src="assets/avatar.png" alt="Asistente" />
+</button>

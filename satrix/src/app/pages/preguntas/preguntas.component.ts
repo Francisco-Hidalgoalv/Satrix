@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class PreguntasComponent {
   filtro: string = '';
-  preguntaAbierta: any = null; // ← Estado de pregunta expandida
+  preguntaAbierta: any = null;
+  categoriaAbierta: string | null = null;
 
   preguntas = [
     {
@@ -69,7 +70,21 @@ export class PreguntasComponent {
     );
   }
 
+  get categoriasFiltradas(): string[] {
+    const categorias = this.filtradas.map(p => p.categoria);
+    return [...new Set(categorias)];
+  }
+
+  filtradasPorCategoria(categoria: string) {
+    return this.filtradas.filter(p => p.categoria === categoria);
+  }
+
   alternarAcordeon(pregunta: any) {
     this.preguntaAbierta = this.preguntaAbierta === pregunta ? null : pregunta;
+  }
+
+  alternarCategoria(categoria: string) {
+    this.categoriaAbierta = this.categoriaAbierta === categoria ? null : categoria;
+    this.preguntaAbierta = null;
   }
 }

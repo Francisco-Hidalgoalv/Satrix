@@ -11,7 +11,7 @@ import { AsistenteVirtualComponent } from '../../components/asistente-virtual/as
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  mensajeAsistente: string = 'Bienvenido a Satrix\nPresiona los botones de facturación para facturar un ticket de un servicio\nPresiona los botones de recuperación para recuperar un ticket de un servicio';
+  mensajeAsistente: string = 'Bienvenid@ al sistema de Satrix. ¿En qué puedo ayudarte?';
   asistenteAbierto: boolean = false;
   pantallaGrande: boolean = false;
 
