@@ -1,5 +1,5 @@
 body {
-  background-color: #F9F5F0; /* ← color hueso */
+  background-color: #F9F5F0; 
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -41,11 +41,11 @@ body {
 }
 
 .nav a.activo {
-  background-color: #0f4c5c; /* verde moderno */
+  background-color: #f56a00; 
   color: white !important;
 }
 .nav a:hover {
-  background-color: #0f4c5c; /* verde muy claro */
+  background-color: #f56a00; 
   color: #F9F5F0;
 }
 
@@ -58,7 +58,6 @@ body {
   cursor: pointer;
 }
 
-/* Responsive para móviles */
 @media (max-width: 600px) {
   .factura-container,
   .CFDI-container {
@@ -70,7 +69,6 @@ body {
     font-size: 1.8rem;
     background: #EAF4F4;
     border: none;
-    color: #0f4c5c;
     display: none;
     cursor: pointer;
     position: absolute;
@@ -86,7 +84,6 @@ body {
     align-items: center;
   }
   
-
   .nav {
     display: none;
     flex-direction: column;
@@ -311,7 +308,7 @@ body {
     }
     
     .TTUR:hover {
-      background-color: rgba(247, 156, 29, 0.2); 
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -325,7 +322,7 @@ body {
     }
     
     .primera_plus:hover {
-      background-color: rgba(247, 156, 29, 0.2); 
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -339,7 +336,7 @@ body {
     }
     
     .flecha_amarilla:hover {
-      background-color: rgba(247, 156, 29, 0.2); 
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -353,7 +350,7 @@ body {
     }
     
     .boletos_bus:hover {
-      background-color: rgba(247, 156, 29, 0.2);
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -367,7 +364,7 @@ body {
     }
     
     .consumo_alimentos:hover {
-      background-color: rgba(247, 156, 29, 0.2); 
+      background-color: rgba(208, 245, 227, 0.7);
       transform: scale(1.1);
     }
   
@@ -449,4 +446,3 @@ body {
     margin-top: 10px;
     cursor: pointer;
   }
-  

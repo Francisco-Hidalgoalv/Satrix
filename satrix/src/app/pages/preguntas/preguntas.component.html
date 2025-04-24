@@ -1,19 +1,35 @@
 <main class="contenido">
   <h2 class="titulo-faq">Preguntas Frecuentes</h2>
 
-  <input type="text" [(ngModel)]="filtro" placeholder="Buscar una pregunta..." class="faq-buscador" />
+  <input
+    type="text"
+    [(ngModel)]="filtro"
+    placeholder="Buscar una pregunta..."
+    class="faq-buscador"
+  />
 
-  <div class="faq-container">
-    <div class="faq-card" *ngFor="let faq of filtradas" [class.open]="faq === preguntaAbierta" (click)="alternarAcordeon(faq)">
-      <div class="faq-header">
-        <div>
-          <div class="faq-categoria">{{ faq.categoria }}</div>
+  <div *ngFor="let categoria of categoriasFiltradas" class="faq-section">
+    <div class="categoria-header" (click)="alternarCategoria(categoria)">
+      <h3>{{ categoria }}</h3>
+      <span class="toggle-icon">
+        {{ categoriaAbierta === categoria ? '▲' : '▼' }}
+      </span>
+    </div>
+
+    <div *ngIf="categoriaAbierta === categoria" class="faq-container">
+      <div
+        class="faq-card"
+        *ngFor="let faq of filtradasPorCategoria(categoria)"
+        [class.open]="faq === preguntaAbierta"
+        (click)="alternarAcordeon(faq)"
+      >
+        <div class="faq-header">
           <div class="faq-pregunta">{{ faq.pregunta }}</div>
+          <span class="faq-icon">+</span>
         </div>
-        <span class="faq-icon">+</span>
-      </div>
-      <div class="faq-content">
-        {{ faq.respuesta }}
+        <div class="faq-content">
+          {{ faq.respuesta }}
+        </div>
       </div>
     </div>
   </div>
