@@ -1,67 +1,77 @@
-  <main class="contenido">
-    <h1 class="titulo-factura">Facturación</h1>
-    <div class="factura-container">
-      <div class="icon-button">
-        <button id="boleto" class="boleto" (click)="irAFacturacion()">
-          <span class="material-symbols-outlined">confirmation_number</span>
-        </button>
-        <label for="boleto">BOLETOS</label>
-      </div>
-      
-      <div class="icon-button">
-        <button id="envios" class="envios" (click)="irAFacturacionEnvios()">
-          <span class="material-symbols-outlined">local_shipping</span>
-        </button>
-        <label for="envios">ENVÍOS PRIMERA PLUS</label>
-      </div>
-      <div class="icon-button">
-        <button id="alimentos" class="alimentos" (click)="irAFacturacionAlimentos()">
-          <span class="material-symbols-outlined">restaurant</span>
-        </button>
-        <label for="alimentos">CONSUMO DE ALIMENTOS</label>
-      </div>
-    </div>
+<main class="contenido">
 
-    <h1 class="titulo-CFDI">Recuperación de CFDI</h1>
-    <div class="CFDI-container">
-      <div class="icon-button">
-        <button id="TTUR" class="TTUR" (click)="irARecuperacionTTUR()">
-          <span class="material-symbols-outlined">airport_shuttle</span>
-        </button>
-        <label for="TTUR">TTUR</label>
-      </div>
-      <div class="icon-button">
-        <button id="primera_plus" class="primera_plus" (click)="irARecuperacionEnvios()">
-          <span class="material-symbols-outlined">local_shipping</span>
-        </button>
-        <label for="primera_plus">ENVÍOS PRIMERA PLUS</label>
-      </div>
-      <div class="icon-button">
-        <button id="flecha_amarilla" class="flecha_amarilla" (click)="irARecuperacionFlecha()">
-          <span class="material-symbols-outlined">call_made</span>
-        </button>
-        <label for="flecha_amarilla">Flecha Amarilla</label>
-      </div>
-      <div class="icon-button">
-        <button id="boletos_bus" class="boletos_bus" (click)="irARecuperacionBoletos()">
-          <span class="material-symbols-outlined">confirmation_number</span>
-        </button>
-        <label for="boletos_bus">Boletos de autobús</label>
-      </div>
-      <div class="icon-button">
-        <button id="consumo_alimentos" class="consumo_alimentos" (click)="irARecuperacionAlimentos()">
-          <span class="material-symbols-outlined">restaurant</span>
-        </button>
-        <label for="consumo_alimentos">CONSUMO DE ALIMENTOS</label>
-      </div>
-    </div>
-    <div class="burbuja-asistente" [class.abierto]="asistenteAbierto || pantallaGrande" (click)="manejarClickBurbuja()">
-      <ng-container *ngIf="asistenteAbierto || pantallaGrande">
-        <app-asistente-virtual [mensaje]="mensajeAsistente"></app-asistente-virtual>
-      </ng-container>
-      <ng-container *ngIf="!pantallaGrande && !asistenteAbierto">
-        🤖
-      </ng-container>
-    </div>    
-  </main>
+  <!-- 💬 Mensaje de bienvenida con estilo glassmorphism -->
+  <p>
+    <span style="font-weight: 500;">Bienvenido al sistema de <span style="color: #f56a00;">Satrix</span>.</span><br>
+    <span style="font-size: 0.95rem;">Facturar nunca fue tan fácil. Elige una opción para comenzar.</span>
+  </p>
   
+  <!-- 📌 Sección de Facturación -->
+  <h1 class="titulo-factura">Facturación</h1>
+  <div class="factura-container">
+    <div class="icon-button">
+      <button id="boleto" class="boleto" (click)="irAFacturacion()">
+        <span class="material-symbols-outlined">confirmation_number</span>
+      </button>
+      <label for="boleto">BOLETOS</label>
+    </div>
+    <div class="icon-button">
+      <button id="envios" class="envios" (click)="irAFacturacionEnvios()">
+        <span class="material-symbols-outlined">local_shipping</span>
+      </button>
+      <label for="envios">ENVÍOS PRIMERA PLUS</label>
+    </div>
+    <div class="icon-button">
+      <button id="alimentos" class="alimentos" (click)="irAFacturacionAlimentos()">
+        <span class="material-symbols-outlined">restaurant</span>
+      </button>
+      <label for="alimentos">CONSUMO DE ALIMENTOS</label>
+    </div>
+  </div>
+
+  <!-- 📌 Sección de Recuperación -->
+  <h1 class="titulo-CFDI">Recuperación de CFDI</h1>
+  <div class="CFDI-container">
+    <div class="icon-button">
+      <button id="TTUR" class="TTUR" (click)="irARecuperacionTTUR()">
+        <span class="material-symbols-outlined">airport_shuttle</span>
+      </button>
+      <label for="TTUR">TTUR</label>
+    </div>
+    <div class="icon-button">
+      <button id="primera_plus" class="primera_plus" (click)="irARecuperacionEnvios()">
+        <span class="material-symbols-outlined">local_shipping</span>
+      </button>
+      <label for="primera_plus">ENVÍOS PRIMERA PLUS</label>
+    </div>
+    <div class="icon-button">
+      <button id="flecha_amarilla" class="flecha_amarilla" (click)="irARecuperacionFlecha()">
+        <span class="material-symbols-outlined">call_made</span>
+      </button>
+      <label for="flecha_amarilla">Flecha Amarilla</label>
+    </div>
+    <div class="icon-button">
+      <button id="boletos_bus" class="boletos_bus" (click)="irARecuperacionBoletos()">
+        <span class="material-symbols-outlined">confirmation_number</span>
+      </button>
+      <label for="boletos_bus">Boletos de autobús</label>
+    </div>
+    <div class="icon-button">
+      <button id="consumo_alimentos" class="consumo_alimentos" (click)="irARecuperacionAlimentos()">
+        <span class="material-symbols-outlined">restaurant</span>
+      </button>
+      <label for="consumo_alimentos">CONSUMO DE ALIMENTOS</label>
+    </div>
+  </div>
+
+  <!-- 🤖 Asistente Virtual -->
+  <div class="burbuja-asistente" [class.abierto]="asistenteAbierto || pantallaGrande" (click)="manejarClickBurbuja()">
+    <ng-container *ngIf="asistenteAbierto || pantallaGrande; else burbujaIcono">
+      <app-asistente-virtual [mensaje]="mensajeAsistente"></app-asistente-virtual>
+    </ng-container>
+    <ng-template #burbujaIcono>
+      🤖
+    </ng-template>
+  </div>
+
+</main>

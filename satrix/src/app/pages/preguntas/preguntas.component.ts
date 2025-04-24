@@ -81,8 +81,8 @@ export class PreguntasComponent {
 
   alternarAcordeon(pregunta: any) {
     this.preguntaAbierta = this.preguntaAbierta === pregunta ? null : pregunta;
-  }
-
+  }  
+  
   alternarCategoria(categoria: string) {
     this.categoriaAbierta = this.categoriaAbierta === categoria ? null : categoria;
     this.preguntaAbierta = null;

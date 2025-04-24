@@ -21,13 +21,15 @@
         class="faq-card"
         *ngFor="let faq of filtradasPorCategoria(categoria)"
         [class.open]="faq === preguntaAbierta"
-        (click)="alternarAcordeon(faq)"
       >
-        <div class="faq-header">
+        <div class="faq-header" (click)="alternarAcordeon(faq)">
           <div class="faq-pregunta">{{ faq.pregunta }}</div>
-          <span class="faq-icon">+</span>
+          <span class="faq-icon">
+            {{ preguntaAbierta === faq ? '×' : '+' }}
+          </span>
         </div>
-        <div class="faq-content">
+
+        <div class="faq-content" *ngIf="preguntaAbierta === faq">
           {{ faq.respuesta }}
         </div>
       </div>
