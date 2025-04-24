@@ -3,51 +3,43 @@
 
   <form class="formulario-factura" (ngSubmit)="enviarFormulario()" #formulario="ngForm">
 
+    <!-- BOTONES DE SUBIDA -->
+    <div class="upload-buttons-row">
+      <input type="file" id="imagenBoleto" (change)="onArchivoSeleccionado($event)" accept="image/*" hidden />
+      <label for="imagenBoleto" class="upload-icon-button">
+        <img src="assets/subir-boleto.png" alt="Subir boleto" class="upload-icon" />
+        <span>Subir Boleto</span>
+      </label>
+
+      <input type="file" id="documentoRFC" (change)="onDocumentoRFCSeleccionado($event)" accept=".pdf,image/*" hidden />
+      <label for="documentoRFC" class="upload-icon-button">
+        <img src="assets/subir-rfc.png" alt="Subir constancia" class="upload-icon" />
+        <span>Subir RFC</span>
+      </label>
+    </div>
+
+    <div class="text-center">
+      <button type="button" (click)="analizarImagen(); analizarRFC();" class="btn-btn-primario">
+        3. Rellenar datos
+      </button>
+    </div>
+
     <!-- TOKEN PRIMERO -->
     <label for="token">Token de Boleto:</label>
-    <input id="token" name="token" type="text" [(ngModel)]="token" required />
+    <div class="input-con-icon">
+      <input id="token" name="token" type="text" [(ngModel)]="token" required class="input-reducido" />
+      <img *ngIf="tokenExtraido" src="assets/check.svg" alt="✓" class="check-icon" />
+    </div>
     <p class="error" *ngIf="tokenInvalid">El token no puede estar vacío.</p>
-
-    <label for="imagenBoleto">Sube la imagen del boleto:</label>
-    <input type="file" id="imagenBoleto" (change)="onArchivoSeleccionado($event)" accept="image/*" />
-    <button type="button" (click)="analizarImagen()">Leer token automáticamente</button>
-
-    <p class="resultado-token" *ngIf="tokenExtraido">
-      Token detectado: <strong>{{ tokenExtraido }}</strong>
-    </p>
 
     <!-- RFC DESPUÉS -->
     <label for="rfc">RFC:</label>
-    <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required />
+    <div class="input-con-icon">
+      <input id="rfc" name="rfc" type="text" [(ngModel)]="rfc" required class="input-reducido" />
+      <img *ngIf="rfcExtraido" src="assets/check.svg" alt="✓" class="check-icon" />
+    </div>
     <p class="error" *ngIf="rfcInvalid">El RFC debe tener entre 12 y 13 caracteres.</p>
 
-    <label for="documentoRFC">Sube tu constancia fiscal:</label>
-    <input type="file" id="documentoRFC" (change)="onDocumentoRFCSeleccionado($event)" accept=".pdf,image/*" />
-    <button type="button" (click)="analizarRFC()">Leer RFC automáticamente</button>
-
-    <p class="resultado-token" *ngIf="rfcExtraido">
-      RFC detectado: <strong>{{ rfcExtraido }}</strong>
-    </p>
-
-    <!-- MODAL -->
-    <div class="modal" *ngIf="mostrarEjemplo" (click)="mostrarEjemplo = false">
-      <div class="modal-contenido" (click)="$event.stopPropagation()">
-        <img src="assets/ticket-boleto.PNG" alt="Ejemplo de ticket" />
-        <button class="cerrar" (click)="mostrarEjemplo = false">✖</button>
-      </div>
-    </div>
-
-    <button type="submit" class="btn-btn-primario">Facturar</button>
+    <button type="submit" class="btn-btn-primario">Verificar</button>
   </form>
-
-  <!-- ASISTENTE -->
-  <div class="boton-asistente" (click)="toggleAsistente()">💬</div>
-
-  <div class="contenedor-asistente" *ngIf="asistenteVisible">
-    <app-asistente-virtual [mensaje]="mensajeAsistente"></app-asistente-virtual>
-    <div class="acciones-asistente">
-      <button (click)="accionRFC()">¿No conoces tu RFC?</button>
-      <button (click)="accionToken()">¿No encuentras el token?</button>
-    </div>
-  </div>
 </main>
