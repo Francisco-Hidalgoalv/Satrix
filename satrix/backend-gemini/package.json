@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "@google-cloud/documentai": "^9.1.0",
+    "@google-cloud/vision": "^5.1.0",
     "@google/generative-ai": "^0.24.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
