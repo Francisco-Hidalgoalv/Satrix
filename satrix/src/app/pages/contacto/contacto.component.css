@@ -1,91 +1,104 @@
 .contacto {
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
 .contacto h2 {
-  font-size: 2rem;
-  color: #264653; /* Texto principal más moderno */
+  font-size: 2.2rem;
+  color: #264653;
   margin-bottom: 2.5rem;
+  font-weight: 700;
+  font-family: 'Rubik', sans-serif;
 }
 
-/* Contenedor general */
+/* GRID responsive */
 .contacto-padre {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem 2rem;
+  padding-bottom: 2.5rem;
 }
 
+/* Tarjeta de contacto */
 .contacto-container {
-  background: linear-gradient(to bottom right, #f8fafc, #f8fafc);
-  padding: 24px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  padding: 24px 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
 
 .contacto-container:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.12);
 }
 
+/* Título por categoría */
 .contacto-container h2 {
-  color: #3b7660;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #2c7a7b;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
 }
 
+/* Persona */
 .persona {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.4;
 }
 
 .nombre {
-  font-weight: 600;
-  color: #264653;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1f2937;
   margin-bottom: 2px;
 }
 
 .departamento {
-  font-size: 1rem;
-  color: #264653;
   font-weight: 600;
+  font-size: 0.98rem;
+  color: #374151;
   margin-bottom: 4px;
 }
 
+/* Correo accesible */
 .correo {
+  display: block;
   font-style: italic;
-  font-size: 0.93rem;
+  font-size: 0.97rem;
   color: #4b5563;
-  margin-bottom: 8px;
-}
-
-.contacto-container a {
-  color: #374151;
   text-decoration: none;
-  font-style: italic;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  word-break: break-word;
+  transition: all 0.3s ease;
 }
 
-.contacto-container a:hover {
-  color: #3b7660;
+.correo:hover {
+  color: #2c7a7b;
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .contacto h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .contacto-container {
-    border-radius: 20px;
+    padding: 18px 16px;
+    border-radius: 16px;
   }
 
   .contacto-padre {
     padding: 0 0.5rem 2rem;
     gap: 1rem;
+  }
+
+  .nombre,
+  .departamento,
+  .correo {
+    font-size: 1rem;
   }
 }
